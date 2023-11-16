@@ -7,14 +7,17 @@ import org.springframework.stereotype.Service;
 
 import com.hexaware.loanmanagementsystem.dto.CustomerDetailsDTO;
 import com.hexaware.loanmanagementsystem.entity.CustomerDetails;
+import com.hexaware.loanmanagementsystem.entity.PropertyDetails;
 import com.hexaware.loanmanagementsystem.repository.CustomerDetailsRepository;
+import com.hexaware.loanmanagementsystem.repository.PropertyDetailsRepository;
 @Service
 public class CustomerDetailsServiceImp implements ICustomerDetailsService {
 
 	@Autowired
 	CustomerDetailsRepository customerDetailsRepository;
 	
-
+	@Autowired
+	PropertyDetailsRepository propertyDetailsRepository;
 	
 	@Autowired
 	public CustomerDetailsServiceImp(CustomerDetailsRepository customerDetailsRepository) {

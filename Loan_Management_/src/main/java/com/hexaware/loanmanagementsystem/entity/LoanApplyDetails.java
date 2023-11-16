@@ -30,8 +30,8 @@ public class LoanApplyDetails {
 	@NotBlank
 	private String propertyAddress;
 	
-	
-	@NotBlank
+//	I think we already get this from customerDetails mapping
+
 	private long CustomerId;
 
 	@ManyToOne
@@ -41,7 +41,9 @@ public class LoanApplyDetails {
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "property_ID") 
 	private PropertyDetails propertyDetails;
-
+	
+//	@OneToOne(cascade = CascadeType.ALL)
+//	private LoanStatus loanStatus;
 
 	@ManyToOne
 	@JoinColumn(name = "loanType_ID")

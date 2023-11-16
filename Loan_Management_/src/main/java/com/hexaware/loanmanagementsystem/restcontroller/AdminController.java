@@ -13,13 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.hexaware.loanmanagementsystem.dto.AdminDetailsDTO;
-import com.hexaware.loanmanagementsystem.dto.CustomerLoanInformationDTO;
 import com.hexaware.loanmanagementsystem.entity.AdminDetails;
-import com.hexaware.loanmanagementsystem.entity.CustomerLoanInformation;
-import com.hexaware.loanmanagementsystem.entity.LoanApplyDetails;
-import com.hexaware.loanmanagementsystem.service.CustomerLoanInformationServiceImp;
 import com.hexaware.loanmanagementsystem.service.IAdminDetailsService;
-import com.hexaware.loanmanagementsystem.service.LoanApplyDetailsServiceImp;
 
 @RestController
 @RequestMapping("/api/admin/")

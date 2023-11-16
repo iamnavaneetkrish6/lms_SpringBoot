@@ -20,9 +20,9 @@ public class LoanStatus {
 
 	@OneToOne(mappedBy = "loanStatus")
 	private CustomerLoanInformation customerLoanInformation;
-
+//	@OneToOne(mappedBy = "loanStatus")
 	private LoanApplyDetails loanApplyDetails;
-
+//we do need to do something to map this or remove this because without it this makes no sense I think
 	private CustomerDetails customerDetails;
 
 	public long getLoanStatusId() {

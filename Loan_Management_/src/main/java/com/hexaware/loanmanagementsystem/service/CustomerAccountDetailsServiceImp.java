@@ -71,8 +71,15 @@ public class CustomerAccountDetailsServiceImp implements ICustomerAccountDetails
 	}
 
 	public CustomerAccountDetails addCustomerAccountDetail(CustomerAccountDetailsDTO customerAccountDetailsDTO) {
-		// TODO Auto-generated method stub
-		return null;
+		CustomerAccountDetails customerAccountDetail = new CustomerAccountDetails();
+		customerAccountDetail.setAccountNumber(customerAccountDetailsDTO.getAccountNumber());
+		customerAccountDetail.setBankName(customerAccountDetailsDTO.getBankName());
+		customerAccountDetail.setPanCardNumber(customerAccountDetailsDTO.getPanCardNumber());
+		customerAccountDetail.setAadharNumber(customerAccountDetailsDTO.getAadharNumber());
+		
+		
+		
+		return customerAccountDetailRepository.save(customerAccountDetail);
 	}
 
 }
