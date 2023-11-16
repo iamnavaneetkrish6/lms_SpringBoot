@@ -1,0 +1,80 @@
+package com.hexaware.loanmanagementsystem.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.hexaware.loanmanagementsystem.dto.CustomerDetailsDTO;
+import com.hexaware.loanmanagementsystem.entity.CustomerDetails;
+import com.hexaware.loanmanagementsystem.entity.PropertyDetails;
+import com.hexaware.loanmanagementsystem.repository.CustomerDetailsRepository;
+import com.hexaware.loanmanagementsystem.repository.PropertyDetailsRepository;
+@Service
+public class CustomerDetailsServiceImp implements ICustomerDetailsService {
+
+	@Autowired
+	CustomerDetailsRepository customerDetailsRepository;
+	
+	@Autowired
+	PropertyDetailsRepository propertyDetailsRepository;
+	
+	@Autowired
+	public CustomerDetailsServiceImp(CustomerDetailsRepository customerDetailsRepository) {
+		super();
+		this.customerDetailsRepository = customerDetailsRepository;
+	}
+
+	@Override
+	public CustomerDetails customerRegisteration(CustomerDetailsDTO customer) {
+
+		CustomerDetails customerDetails = new CustomerDetails();
+		customerDetails.setCustomerName(customer.getCustomerName());
+		customerDetails.setCustomerUsername(customer.getCustomerUsername());
+		customerDetails.setCustomerPassword(customer.getCustomerPassword());
+		customerDetails.setCustomerAddress(customer.getCustomerAddress());
+		customerDetails.setCustomerState(customer.getCustomerState());
+		customerDetails.setCustomerState(customer.getCustomerState());
+		customerDetails.setCustomerCountry(customer.getCustomerCountry());
+		customerDetails.setCustomerEmailId(customer.getCustomerEmailId());
+		
+		
+		return customerDetailsRepository.save(customerDetails);
+	}
+
+	@Override
+	public CustomerDetails updateCustomerDetails(CustomerDetailsDTO customer) {
+		CustomerDetails customerDetails = new CustomerDetails();
+		customerDetails.setCustomerName(customer.getCustomerName());
+		customerDetails.setCustomerUsername(customer.getCustomerUsername());
+		customerDetails.setCustomerPassword(customer.getCustomerPassword());
+		customerDetails.setCustomerAddress(customer.getCustomerAddress());
+		customerDetails.setCustomerState(customer.getCustomerState());
+		customerDetails.setCustomerState(customer.getCustomerState());
+		customerDetails.setCustomerCountry(customer.getCustomerCountry());
+		customerDetails.setCustomerEmailId(customer.getCustomerEmailId());
+		
+		
+		return customerDetailsRepository.save(customerDetails);
+	}
+
+	@Override
+	public void deleteCustomer(long customerId) {
+
+		customerDetailsRepository.deleteById(customerId);
+		
+	}
+
+	@Override
+	public CustomerDetails getCustomerDetailsById(long customerId) {
+		// TODO Auto-generated method stub
+		return customerDetailsRepository.findById(customerId).orElse(new CustomerDetails());
+	}
+
+	@Override
+	public List<CustomerDetails> getAllCustomerDetails() {
+		// TODO Auto-generated method stub
+		return customerDetailsRepository.findAll();
+	}
+
+}
